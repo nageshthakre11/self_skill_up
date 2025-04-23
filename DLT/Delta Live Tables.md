@@ -1,7 +1,11 @@
 Delta Live Tables:-
+
     - Declarative by Nature
+
         - Building Reliable, Maintainable & Testable data processing  pipelines.
+
         - Developer only need to focus on transformation
+
         - DLT manages orchestration, cluster management, monitoring, data quality and error handling
 
     - Allows both Batch and Streaming ingestion
@@ -10,9 +14,13 @@ Delta Live Tables:-
 
 
 DLT Pipelines:-
+
     - Made up of 3 types of datasets
+
         1. Streaming Tables
+
         2. Materialized Views
+        
         3. Views
 
     - Supports Python & SQL Languages
