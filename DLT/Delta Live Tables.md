@@ -109,6 +109,8 @@ def table():
     return df
 ```
 
+*Common decorators used DLT pipeline*
+```python
 @dlt.table()
 @dlt.view()
 @dlt.append_flow()
@@ -116,6 +118,8 @@ def table():
 @dlt.expect_all()
 @dlt.expect_all_or_fail()
 @dlt.expect_all_or_drop()
+```
+
 
 ```python
 @dlt.expect_all("age_check", "age > 18")
