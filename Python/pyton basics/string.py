@@ -123,8 +123,7 @@ for k, v in d.items():
 print(new_s)
 
 
-############  get the number from string  ###################
-
+############  Extract numbers from a string  ###################
 
 s = 'a1b2c3'
 #output --> 1 2 3
