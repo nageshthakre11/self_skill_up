@@ -99,3 +99,146 @@ for i in range(len(l)-1):
             t = (l[i],l[j])
             new_l.append(t)
 print(new_l)
+
+
+
+#######################################
+
+nums = [4, 1, 9, 7, 3, 9]
+# sort te list without function 
+for i in range(len(nums)):
+    for j in range(i+1, len(nums)):
+        #print(nums[i], nums[j])
+        if nums[i] < nums[j]:  # < for decreseing, > for increseing 
+            nums[i], nums[j] = nums[j], nums[i]
+            
+# sorted list with removing the duplicate records       
+x = [4, 1, 9, 7, 3, 9]
+print(list(set(x)))
+
+
+#########################################################
+
+# Remove duplicates from a list while maintaining order
+
+input_list = [1, 2, 2, 3, 1, 4]
+new_list = []
+for i in range(len(input_list)):
+    if input_list[i] not in new_list:
+        new_list.append(input_list[i])
+print(new_list)  
+
+###############################################################################
+
+# Rotate a list to the right by k steps
+nums = [11, 12, 13, 14, 15,12,43, 54, 65]   
+new_list = [0 for i in range(len(nums))]
+k = -2
+
+for i in range(len(nums)):
+    new_list[i] = nums[(i+k) % len(nums)]
+print(new_list)
+
+##################################################################################
+
+ 
+list1 = [1, 2, 3] 
+list2 = [2, 3, 4] 
+# common element → [2, 3]
+
+common_element = [ i for i in list1 if i in list2]
+print(common_element)
+####################################################################
+
+
+# flattern the nested list 
+nested = [1, [2, [3, 4], 5], 6] 
+
+# output needed → [1, 2, 3, 4, 5, 6]
+
+def flattern_list(nested):
+    new_list = []
+    for i in nested:
+        if isinstance(i, list):
+            new_list.extend(flattern_list(i))
+        else: 
+            new_list.append(i)
+    return new_list
+    
+print(flattern_list(nested))
+
+#######################################################
+
+# count the freq of elements
+input = ['apple', 'banana', 'apple', 'orange']
+d = {}
+
+for i in input:
+    if i in d.keys():
+        d[i] = d[i] + 1
+    else:
+        d[i] = 1
+print(d)
+
+####################################
+# find key with maximum value 
+d = {'a': 5, 'b': 9, 'c': 2} 
+
+listed_keys = list(d.keys())
+max_value = d[listed_keys[0]]
+
+for i in d.keys():
+    if d[i] > max_value:
+        max_value = d[i]
+        max_key = i
+print(max_key, max_value)
+
+####################################
+
+# revert the dictonary 
+d = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10, 'k': 11, 'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26}
+
+new_d = {}
+for k,v in d.items():
+    new_d[v] = k
+print(new_d)
+
+####################################################################
+
+# Merge two dictionaries. If same key, sum the values
+d1 = {'a': 1, 'b': 2}
+d2 = {'a': 3, 'c': 5}
+
+for k in d1.keys():
+    if k in d2.keys():
+        d2[k] += d1[k]
+    else: 
+        d2[k] = d1[k]
+        
+print(d2)
+################################################################
+
+
+# group items by keys in list 
+
+data = [
+    {"name": "Alice", "dept": "IT"},
+    {"name": "Bob", "dept": "HR"},
+    {"name": "Charlie", "dept": "IT"},
+]
+
+# output → {'IT': ['Alice', 'Charlie'], 'HR': ['Bob']}
+
+d = {}
+
+for i in data:
+    d[i['dept']] =[]
+    
+for i in data:
+    d[i['dept']].append(i['name'])
+    
+print(d)
+
+#####################################################
+
+
