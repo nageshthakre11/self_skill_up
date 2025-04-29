@@ -42,24 +42,24 @@ spark.conf.set("spark.sql.shuffle.partitions", 250)
 spark.conf.set("spark.sql.autoBraodcastJoinThreshold",10*1024*1024)
 ```
 
-from pyspark.sql import SparkSession
-
-spark = SparkSession.builder \
-    .appName("OptimizedSparkApp") \
-    .getOrCreate()
-
 # ✅ Cluster-level & execution tuning
+```python
 spark.conf.set("spark.dynamicAllocation.enabled", "true")
 spark.conf.set("spark.shuffle.service.enabled", "true")
 spark.conf.set("spark.dynamicAllocation.minExecutors", "4")
 spark.conf.set("spark.dynamicAllocation.maxExecutors", "50")
+```
 
 # ✅ Adaptive Query Execution (AQE)
+```python
 spark.conf.set("spark.sql.adaptive.enabled", "true")
 spark.conf.set("spark.sql.adaptive.coalescePartitions.enabled", "true")
 spark.conf.set("spark.sql.adaptive.skewJoin.enabled", "true")
+```
 
 # ✅ Join & Shuffle optimization
+```python
 spark.conf.set("spark.sql.autoBroadcastJoinThreshold", "52428800")  # 50MB
 spark.conf.set("spark.sql.shuffle.partitions", "200")
+```
 
