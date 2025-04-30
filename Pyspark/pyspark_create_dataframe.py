@@ -45,4 +45,6 @@ df_delta.write.partitionBy('year','month')\
 
 # mode options - overwrite / append / ignore / error
 
+# Write to Delta table with partitioning
+df.write.format("delta").partitionBy("patient_id").mode("overwrite").option("mergeSchema", "true").save("path_to_delta_table")
 

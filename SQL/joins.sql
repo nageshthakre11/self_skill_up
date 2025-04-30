@@ -12,6 +12,42 @@ Natural Join    --> Join will be decided by SQL itself, based on same name of co
 
 self Join       --> table A joined with itself when data need to be compare is present in same table.
 ```
+
+
+## Join Result Row Count Summary
+
+### 📋 Input Tables
+
+- **Table 1 (T1)**:  
+  `id` column → `1, 1, 2, NULL, NULL` (5 rows)
+
+- **Table 2 (T2)**:  
+  `id` column → `1, 2, 3, NULL` (4 rows)
+
+---
+
+### 🔗 Join Types and Result Row Counts
+
+| Join Type       | Number of Result Rows |
+|------------------|------------------------|
+| **INNER JOIN**   | 3                      |
+| **LEFT JOIN**    | 5                      |
+| **RIGHT JOIN**   | 4                      |
+| **FULL JOIN**    | 7                      |
+| **CROSS JOIN**   | 20                     |
+
+---
+
+> 📌 **Note:**  
+> - `INNER JOIN` includes only matching ids (`1`, `2`)  
+> - `LEFT JOIN` includes all rows from T1  
+> - `RIGHT JOIN` includes all rows from T2  
+> - `FULL JOIN` includes all rows from both tables, with NULLs filled  
+> - `CROSS JOIN` is the Cartesian product: `5 x 4 = 20`
+
+
+
+
 --SELF JOIN 
 -- write a querry to fetch the child name and age along with their parent name and age
 
